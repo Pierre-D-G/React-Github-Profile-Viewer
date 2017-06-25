@@ -1,6 +1,6 @@
 ## React Github Profile Viewer
 
-React Application which consumes the GitHub API allow a user to search for github profiles and get information about the profile.
+React Application which consumes the GitHub API to allow users to search for specific Github profiles and displays information about the profile.
 
 This application is the sister of [ng-Github-Profile-Searcher](https://github.com/Pierre-D-G/Ng-Github-Profile-Searcher) which also consumes the Github API.
 
@@ -15,7 +15,7 @@ Run `npm install` or `yarn install` to install dependancies
 
 In the project directory, you can run:
 
-### `npm start` or `yarn install`
+### `npm start` or `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
