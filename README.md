@@ -38,4 +38,10 @@ Your app is ready to be deployed!
 
 ## TODO 
 
+* Create Components
+* Integrate Github API
+    - Get Data from API
+    - Display Data from API
+* Search Functionality
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
