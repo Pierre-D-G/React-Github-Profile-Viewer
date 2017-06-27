@@ -14,7 +14,7 @@ class App extends Component {
     }
   }
 
-  // Retrieving data from Github API using fetch()
+  // Get User's profile information from github API
   getUserData = () => {
     fetch('http://api.github.com/users/' + this.state.username)
       .then(function(response){
@@ -33,16 +33,35 @@ class App extends Component {
               console.log('There was a problem with fetch operation:' + error.message)
             })
   }
-
+  // Get User's repositories Github API call
+  getUserRepos = () => {
+    fetch('http://api.github.com/users/' + this.state.username + '/repos?per_page=' + this.state.perPage + '&sort=created')
+      .then(function(response){
+        if(!response.ok){
+          throw Error(response.statusText);
+        }
+        return response
+      })
+        .then(response => response.json())
+          .then(json => {
+            console.log(json);
+            this.setState(
+              {userRepos: json})
+          })
+            .catch(function(error){
+              console.log('There was a problem with fetch operation:' + error.message)
+            })
+  }
 
   componentDidMount(){
     this.getUserData();
+    this.getUserRepos();
   }
 
   render() {
     return (
       <div>
-        <Profile userData = {this.state.userData}/>
+        <Profile {...this.state}/>
       </div>
     );
   }
