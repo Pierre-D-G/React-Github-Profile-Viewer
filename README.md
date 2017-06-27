@@ -39,9 +39,16 @@ Your app is ready to be deployed!
 ## TODO 
 
 * Create Components
+    - ~~Profile Component~~
+        - ~~Display user profile data here~~
+    - Repository Component
+    - Repositories List Component
+        - Display list of the user's repositories
+    - Search Component
+        * Search Functionality
+            - Enter a username and get the user's data
 * Integrate Github API
-    - Get Data from API
-    - Display Data from API
-* Search Functionality
+    - Get user data from API
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
