@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Profile from './components/Github/User_Profile';
 import 'whatwg-fetch';
 import './App.css';
 
@@ -26,7 +27,7 @@ class App extends Component {
           .then(json => {
             console.log(json);
             this.setState(
-              {userdata: json})
+              {userData: json})
           })
             .catch(function(error){
               console.log('There was a problem with fetch operation:' + error.message)
@@ -41,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p>Hello {this.state.username}</p>
+        <Profile userData = {this.state.userData}/>
       </div>
     );
   }

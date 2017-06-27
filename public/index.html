@@ -5,56 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="%PUBLIC_URL%/stylesheets/materialize.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/stylesheets/bootstrap.min.css">
   <title>React Github</title>
 </head>
 
 <body>
-  <header>
-    <nav class="grey darken-3">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Reacthub</a>
-      </div>
-    </nav>
-  </header>
 
   <main>
     <div class="container">
       <div class="row">
-        <div class="col s12 m10 l8">
-          <div id="root"></div>
-        </div>
+        <div class="col-sm-10 offset-sm-1">
+        <div id="root"></div>
+      </div>
       </div>
     </div>
   </main>
 
-  <footer class="page-footer grey darken-3">
-    <div class="container">
-      <div class="row">
-        <div class="col l8 s12">
-          <h5 class="white-text">React Github Viewer</h5>
-          <p class="grey-text text-lighten-4">
-            An application made with React and Materialize CSS which consumes the Github API to allow users to search for specific Github
-            profiles and displays information about the profile.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2014 Copyright React Github
-      </div>
-    </div>
-  </footer>
   <script src="%PUBLIC_URL%/javascripts/jqeury-3.2.0.min.js"></script>
-  <script src="%PUBLIC_URL%/javascripts/materialize.min.js"></script>
+  <script src="%PUBLIC_URL%/javascripts/bootstrap.min.js"></script>
 </body>
 
 </html>
