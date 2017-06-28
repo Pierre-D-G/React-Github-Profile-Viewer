@@ -45,8 +45,8 @@ Your app is ready to be deployed!
         - ~~Display list of the user's repositories~~
     - ~~Repositories List Component~~
     - Search Component
-        * Search Functionality
-            - Enter a username and get the user's data
+        * ~~Search Functionality~~
+            - ~~Enter a username and get the user's data~~
 * Integrate Github API
     - ~~Get user data from API~~
 
