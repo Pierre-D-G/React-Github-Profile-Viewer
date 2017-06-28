@@ -6,7 +6,7 @@ class RepoList extends Component {
     render() {
         return (
             <div>
-                <ul className="list-group">
+                <div>
                    {
                        this.props.userRepos.map(repo => {
                            return <Repo
@@ -16,7 +16,7 @@ class RepoList extends Component {
                            />
                        })
                    }
-                </ul>
+                </div>
             </div>
         );
     }

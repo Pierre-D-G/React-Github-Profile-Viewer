@@ -7,7 +7,7 @@ class Profile extends Component {
     return (
       <div>
         <div className="card">
-          <h3 className="card-header">{this.props.userData.name}</h3>
+          <h3 className="text-center card-header">{this.props.userData.name}</h3>
           <div className="card-block">
             <div className="row">
               <div className="col-sm-4">
@@ -26,7 +26,8 @@ class Profile extends Component {
                 <a href={this.props.userData.html_url} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Visit Github Profile</a>
               </div>
             </div>
-            <h3>{this.props.userData.login}'s Repositories</h3>
+            <hr />
+            <h3 className="text-center card-header">{this.props.userData.login}'s Repositories</h3>
             <RepoList userRepos = {this.props.userRepos}/>
           </div>
         </div>

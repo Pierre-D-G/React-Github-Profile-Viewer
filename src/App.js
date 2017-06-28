@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Profile from './components/Github/User_Profile';
+import Search from './components/Github/Search';
 import 'whatwg-fetch';
 import './App.css';
 
@@ -17,43 +18,50 @@ class App extends Component {
   // Get User's profile information from github API
   getUserData = () => {
     fetch('http://api.github.com/users/' + this.state.username)
-      .then(function(response){
-        if(!response.ok){
+      .then(function (response) {
+        if (!response.ok) {
           throw Error(response.statusText);
         }
         return response
       })
-        .then(response => response.json())
-          .then(json => {
-            console.log(json);
-            this.setState(
-              {userData: json})
-          })
-            .catch(function(error){
-              console.log('There was a problem with fetch operation:' + error.message)
-            })
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        this.setState(
+          { userData: json })
+      })
+      .catch(function (error) {
+        console.log('There was a problem with fetch operation:' + error.message)
+      })
   }
   // Get User's repositories Github API call
   getUserRepos = () => {
     fetch('http://api.github.com/users/' + this.state.username + '/repos?per_page=' + this.state.perPage + '&sort=created')
-      .then(function(response){
-        if(!response.ok){
+      .then(function (response) {
+        if (!response.ok) {
           throw Error(response.statusText);
         }
         return response
       })
-        .then(response => response.json())
-          .then(json => {
-            console.log(json);
-            this.setState(
-              {userRepos: json})
-          })
-            .catch(function(error){
-              console.log('There was a problem with fetch operation:' + error.message)
-            })
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        this.setState(
+          { userRepos: json })
+      })
+      .catch(function (error) {
+        console.log('There was a problem with fetch operation:' + error.message)
+      })
   }
 
-  componentDidMount(){
+  handleFormSubmit = (username) => {
+    this.setState({ username }, function () {
+      this.getUserData();
+      this.getUserRepos();
+    })
+  }
+
+  componentDidMount() {
     this.getUserData();
     this.getUserRepos();
   }
@@ -61,7 +69,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Profile {...this.state}/>
+        <Search onFormSubmit={this.handleFormSubmit.bind(this)} />
+        <Profile {...this.state} />
       </div>
     );
   }
